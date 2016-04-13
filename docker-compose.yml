@@ -1,7 +1,7 @@
 version: "2"
 services:
   web:
-    image: maven:3.3.9-jdk-8
+    build: .
     command: java -jar target/gs-rest-service-0.1.0.jar
     ports:
       - '8080:8080'
