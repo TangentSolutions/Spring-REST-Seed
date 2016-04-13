@@ -7,3 +7,4 @@ services:
       - '8080:8080'
     volumes:
       - .:/code
+      - ./dependencies:/root/.m2

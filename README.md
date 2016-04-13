@@ -43,6 +43,8 @@ docker-compose run --rm web mvn cobertura:cobertura
 docker-compose up
 ```
 
+---
+
 ## Getting started with Spring boot
 
 To see how this application was built. See: [Building a RESTful Service](https://spring.io/guides/gs/rest-service/)
