@@ -1,0 +1,11 @@
+project_name: codequality  
+
+build_commands: 
+  - mvn package
+test_commands: 
+  - mvn cobertura:cobertura
+pre_service_up_commands: 
+  - mvn package
+post_service_up_commands: []  
+with_codeclimate: no
+cobertura_xml_report_file: target/site/cobertura/coverage.xml
