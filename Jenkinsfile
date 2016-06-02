@@ -33,12 +33,12 @@ node {
       step([$class: 'JUnitResultArchiver', testResults: 'target/surefire-reports/TEST-*.xml'])
    }
    
-   stage 'Load Test'
-     withEnv(["JAVA_HOME=${javaHome}", 'PATH=$PATH:$JAVA_HOME/bin']) {
-       sh "${mvnHome}/bin/mvn  gatling:execute -Dgatling.runMultipleSimulations=true"
-     } 
-     step([$class: 'ArtifactArchiver', artifacts: 'target/gatling/**', fingerprint: true])
-     step([$class: 'io.gatling.jenkins.GatlingPublisher', enabled: true])
+//   stage 'Load Test'
+//     withEnv(["JAVA_HOME=${javaHome}", 'PATH=$PATH:$JAVA_HOME/bin']) {
+//       sh "${mvnHome}/bin/mvn  gatling:execute -Dgatling.runMultipleSimulations=true"
+//     } 
+//     step([$class: 'ArtifactArchiver', artifacts: 'target/gatling/**', fingerprint: true])
+//     step([$class: 'io.gatling.jenkins.GatlingPublisher', enabled: true])
 
    
 }
