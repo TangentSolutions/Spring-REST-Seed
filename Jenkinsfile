@@ -23,9 +23,9 @@ node {
    // Run the maven build
    withEnv(["JAVA_HOME=${javaHome}", 'PATH=$PATH:$JAVA_HOME/bin']) {
       parallel xunit: {
-        sh "${mvnHome}/bin/mvn -f SpringRESTRule/pom.xml  surefire-report:report"
+        sh "${mvnHome}/bin/mvn surefire-report:report"
       }, coverage: {
-        sh "${mvnHome}/bin/mvn -f SpringRESTRule/pom.xml  cobertura:cobertura"
+        sh "${mvnHome}/bin/mvn cobertura:cobertura"
       },
       failFast: false
 
@@ -42,7 +42,7 @@ node {
 
    stage 'Load Test'
      withEnv(["JAVA_HOME=${javaHome}", 'PATH=$PATH:$JAVA_HOME/bin']) {
-       sh "${mvnHome}/bin/mvn -f SpringRESTRule/pom.xml gatling:execute -Dgatling.runMultipleSimulations=true"
+       sh "${mvnHome}/bin/mvn  gatling:execute -Dgatling.runMultipleSimulations=true"
      } 
      step([$class: 'ArtifactArchiver', artifacts: '**/target/gatling/**', fingerprint: true])
      step([$class: 'io.gatling.jenkins.GatlingPublisher', enabled: true])
