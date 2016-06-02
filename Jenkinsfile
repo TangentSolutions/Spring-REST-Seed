@@ -4,8 +4,7 @@ node {
    stage 'Checkout'
 
    // Get some code from a GitHub repository
-   git credentialsId: '3642aacf-de9b-4112-8865-d196ef212782', url: 'gazelle@mdlgd1bl2.africanbank.net:africanbank/AfricanBank-RulesEngine.git'
-
+   git url: 'https://github.com/TangentSolutions/Spring-REST-Seed'
 
    // Get the maven tool.
    // ** NOTE: This 'M3' maven tool must be configured
