@@ -21,12 +21,28 @@
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-test</artifactId>
-        </dependency>        
+        </dependency>    
+
+        <!-- sonar -->    
         <dependency>
             <groupId>org.codehaus.sonar.plugins</groupId>
             <artifactId>sonar-findbugs-plugin</artifactId>
             <version>3.3.2</version>
         </dependency>
+        
+        <!-- actuator -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-actuator</artifactId>
+        </dependency>
+
+        <!-- gatling -->
+        <dependency>
+            <groupId>io.gatling.highcharts</groupId>
+            <artifactId>gatling-charts-highcharts</artifactId>
+            <version>2.2.1</version>
+        </dependency>
+
     </dependencies>
 
 
@@ -63,6 +79,20 @@
                     </dependency>  
                 </dependencies>  
             </plugin> 
+            
+            <!-- sonarqube -->
+            <plugin>
+                <groupId>org.sonarsource.scanner.maven</groupId>
+                <artifactId>sonar-maven-plugin</artifactId>
+                <version>3.0.1</version>
+            </plugin>
+
+            <!-- gatling -->
+            <plugin>
+                <groupId>io.gatling</groupId>
+                <artifactId>gatling-maven-plugin</artifactId>
+                <version>2.2.0</version>
+            </plugin>
         
         </plugins>
 
