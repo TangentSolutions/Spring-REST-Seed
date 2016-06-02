@@ -32,7 +32,13 @@ node {
       step([$class: 'ArtifactArchiver', artifacts: 'target/*.jar,target/*.war,target/site/**,target/surefire-reports/*', fingerprint: true])
       step([$class: 'JUnitResultArchiver', testResults: 'target/surefire-reports/TEST-*.xml'])
    }
-   
+
+   stage 'Analyze'
+   echo "TODO: sonarqube"
+
+   stage 'Run the service'
+   echo "TODO"
+
 //   stage 'Load Test'
 //     withEnv(["JAVA_HOME=${javaHome}", 'PATH=$PATH:$JAVA_HOME/bin']) {
 //       sh "${mvnHome}/bin/mvn  gatling:execute -Dgatling.runMultipleSimulations=true"
